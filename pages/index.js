@@ -98,7 +98,7 @@ export default function Home() {
               Templates <span>-&gt;</span>
             </h2>
             <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
+              Discover and deploy boilerplate the helo budies and the maniac example Next.js&nbsp;projects.
             </p>
           </a>
 
