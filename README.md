@@ -9,6 +9,7 @@ write some short paragraph about the project and it details
 
 ## Add an image or video(visual stuff)
 *can use an <img> or <a> tags
+<img src="./20220425_205815.jpg" alt="a twitter image"  >
 
 ## installation intructions
 How to see how this works
