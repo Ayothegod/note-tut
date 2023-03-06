@@ -93,3 +93,27 @@ eg buy me  coffee
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+
+
+
+
+**bold text**
+*italic*
+
+>quote
+
+`hello there` can i talk to `you`
+
+[chromebook](https://google.com)
+
+- hello
++ how are you
+
+- [] this is a list
+- [x] this is a finished list
+
+```
+lets try whatever fie
+teh next few days
+```
