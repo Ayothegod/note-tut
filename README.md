@@ -1,3 +1,37 @@
+### Lets learn markdown formatting
+**this is a bold  text**
+*this is an italic textr*
+<sub>subscriptr btext</sub>
+
+learn to quote text
+>this is a quote
+
+you can call out A code or quote code 
+this is by `using this`
+
+bigger quoting
+```
+this is 
+a 
+bigger quoting
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Notes app Tutorial 
 
 ## A fully fuctional notes app using Nextjs,tailwind css.
