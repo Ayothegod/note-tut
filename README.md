@@ -21,8 +21,8 @@ bigger quoting
 
 # Images and videos/gif
 ![cat image](./20220425_205815.jpg)
-![cat image](./20220425_205815.jpg | width=100)
-![cat image](./20220425_205815.jpg =250*250)
+<!-- ![cat image](./20220425_205815.jpg | width=100) -->
+<!-- ![cat image](./20220425_205815.jpg =250*250) -->
 <img src="./20220425_205815.jpg" alt="an uma" width="200">
 
 ### lists
