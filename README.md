@@ -17,10 +17,12 @@ bigger quoting
 ```
 
 # Links and link study
-[go to google](https://google.com)
+[go to google](https://google.com )
 
 # Images and videos/gif
-![cat image](./20220425_205815.jpg)
+![cat image](./20220425_205815.jpg | width=100)
+![cat image](./20220425_205815.jpg =250x250)
+<img src="./20220425_205815.jpg" alt="an uma" width="200">
 
 ### lists
 - ayomide
@@ -28,12 +30,8 @@ bigger quoting
 + Doe
 
 ### task list
-- [*] this is complete
 - [ ] this is not cinmpletee
-
-- [*] #739
 - [x] #739
-- [ ] https://github.com/octo-org/octo-repo/issues/740
 - [ ] Add delight to the experience when all tasks are complete :tada:
 
 
@@ -65,7 +63,8 @@ write some short paragraph about the project and it details
 
 ## Add an image or video(visual stuff)
 *can use an <img> or <a> tags
-<img src="./20220425_205815.jpg" alt="a twitter image"  >
+<img src="./20220425_205815.jpg" alt="a twitter image" width="100" height="100">
+<!--  thumbnail image  -->
 
 ## installation intructions
 How to see how this works
