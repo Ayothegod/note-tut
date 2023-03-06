@@ -19,6 +19,10 @@ bigger quoting
 # Links and link study
 [go to google](https://google.com)
 
+# Images and videos/gif
+![cat image](./20220425_205815.jpg)
+![cat image](20220425_205815.jpg)
+
 
 
 
