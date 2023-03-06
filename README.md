@@ -21,7 +21,18 @@ bigger quoting
 
 # Images and videos/gif
 ![cat image](./20220425_205815.jpg)
-![cat image](20220425_205815.jpg)
+
+### lists
+- ayomide
+* adebisi
++ Doe
+
+### task list
+-[*] this is complete
+-[ ] this is not cinmpletee
+
+
+
 
 
 
