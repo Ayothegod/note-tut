@@ -28,8 +28,8 @@ bigger quoting
 + Doe
 
 ### task list
--[*] this is complete
--[ ] this is not cinmpletee
+- [*] this is complete
+- [ ] this is not cinmpletee
 
 
 
