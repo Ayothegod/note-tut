@@ -15,6 +15,7 @@ export const NoteContextProvider = ({children}) => {
  const date = useCreateDate()
   const handleSubmit = (e,title,setTitle,details,setDetails,notes,setNotes) => {
     e.preventDefault()
+    e.preventDefault()
     if(title && details){
       const date = new Date()
       const note = {id:uuid(),title,details,date}
