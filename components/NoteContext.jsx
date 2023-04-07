@@ -15,7 +15,6 @@ export const NoteContextProvider = ({children}) => {
  const date = useCreateDate()
   const handleSubmit = (e,title,setTitle,details,setDetails,notes,setNotes) => {
     e.preventDefault()
-    e.preventDefault()
     if(title && details){
       const date = new Date()
       const note = {id:uuid(),title,details,date}
@@ -25,9 +24,9 @@ export const NoteContextProvider = ({children}) => {
     }
     console.log(handleSubmit);
 }
-// useEffect(() => {
-//       localStorage.setItem("notes",JSON.stringify(notes))
-//   }, [notes])
+useEffect(() => {
+      // localStorage.setItem("notes",JSON.stringify(notes))
+  }, [notes])
     return(
         <noteContext.Provider value={{title,setTitle,details,setDetails,notes,setNotes,handleSubmit}}>
             {children}
