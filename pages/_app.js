@@ -1,10 +1,10 @@
-// import { NoteContextProvider } from '@/components/NoteContext';
-import '@/styles/globals.css'
+import { NoteContextProvider } from "@/pages/NoteContext";
+import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
   return (
-    // </NoteContextProvider>
-    // <NoteContextProvider>
-      <Component {...pageProps}/>
-  )
+    <NoteContextProvider>
+      <Component {...pageProps} />
+    </NoteContextProvider>
+  );
 }

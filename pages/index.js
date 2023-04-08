@@ -1,20 +1,22 @@
-import Head from 'next/head'
-import React from 'react'
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import NoteItem from '@/components/NoteItem';
-import { FaSearch ,FaPlus} from 'react-icons/fa';
-import { useNoteContext } from '@/components/NoteContext';
+import Head from "next/head";
+import React from "react";
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import NoteItem from "@/components/NoteItem";
+import { FaSearch, FaPlus } from "react-icons/fa";
+import { useNoteContext } from "@/pages/NoteContext";
 
 export default function Home() {
-  const [notes, setNotes] = useState([])
-useEffect(() => {
-  const data = JSON.parse(localStorage.getItem("notes"));
-  if (data) {
-    setNotes(data);
-  }
-  console.log(notes);
-}, []);
+  const { note } = useNoteContext();
+
+  // const [notes, setNotes] = useState([]);
+  // useEffect(() => {
+  //   const data = JSON.parse(localStorage.getItem("notes"));
+  //   if (data) {
+  //     setNotes(data);
+  //   }
+  //   console.log(notes);
+  // }, []);
   return (
     <>
       <Head>
@@ -23,26 +25,28 @@ useEffect(() => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className=' bg-black text-white h-full p-4 md:m-auto md:w-1/2 '>
-       <header className=' w-full flex items-center justify-between '>
-        <p className='font-semibold text-2xl '>My Notes</p>
+      <main className=" bg-black text-white h-full p-4 md:m-auto md:w-1/2 ">
+        <header className=" w-full flex items-center justify-between ">
+          <p className="font-semibold text-2xl ">My Notes</p>
 
-        {/* <input type="text" autoFocus placeholder='search notes' className=' text-gray-500 font-medium p-2 text-sm rounded-md outline-gray-300 '/> */}
+          {/* <input type="text" autoFocus placeholder='search notes' className=' text-gray-500 font-medium p-2 text-sm rounded-md outline-gray-300 '/> */}
 
-        <button className=' bg-gray-700 text-lg p-2 rounded-lg '><FaSearch /></button>
-       </header>
-       <section className='mt-4 grid grid-cols-1 md:grid-cols-2 gap-4'>
-        { notes.map((note) => 
-          <NoteItem key={note.id} item={note} />
-        )}
-       </section>
+          <button className=" bg-gray-700 text-lg p-2 rounded-lg ">
+            <FaSearch />
+          </button>
+        </header>
+        <section className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+          {note.map((note) => (
+            <NoteItem key={note.id} item={note} />
+          ))}
+        </section>
 
-       <Link href='/createNote' >
-        <button className='bg-gray-700 p-2 rounded-md text-xl fixed bottom-6 right-6 '>
-          <FaPlus/>
-        </button>
+        <Link href="/createNote">
+          <button className="bg-gray-700 p-2 rounded-md text-xl fixed bottom-6 right-6 ">
+            <FaPlus />
+          </button>
         </Link>
       </main>
     </>
-  )
+  );
 }
