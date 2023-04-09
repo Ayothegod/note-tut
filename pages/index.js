@@ -8,15 +8,6 @@ import { useNoteContext } from "@/pages/NoteContext";
 
 export default function Home() {
   const { note } = useNoteContext();
-
-  // const [notes, setNotes] = useState([]);
-  // useEffect(() => {
-  //   const data = JSON.parse(localStorage.getItem("notes"));
-  //   if (data) {
-  //     setNotes(data);
-  //   }
-  //   console.log(notes);
-  // }, []);
   return (
     <>
       <Head>

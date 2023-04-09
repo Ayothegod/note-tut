@@ -3,36 +3,34 @@ import { useRouter } from "next/router";
 import { IoIosArrowBack } from "react-icons/io";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { useNoteContext } from "../NoteContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useCreateDate from "@/components/useCreateDate";
 
 const EditNote = () => {
   const router = useRouter();
   const idx = router.query.id;
-  const {note,setNote,deleteNote,} = useNoteContext();
-
+  const { note, setNote, deleteNote } = useNoteContext();
   //create note
-  const date = useCreateDate()
-  const notes= note.find(note => note.id === idx)
-  const [title, setTitle] = useState(notes.title);
-  const [details, setDetails] = useState(notes.details);
+  const date = useCreateDate();
+  const notes = note.find((note) => note.id === idx);
+  const [title, setTitle] = useState(notes?.title || "Your Title Here");
+  const [details, setDetails] = useState(notes?.details || "Your details Here");
   console.log(title, details);
 
   const saveEdit = (e) => {
-    e.preventDefault()
-    if(title && details){
-      const newNote = {...notes,title,details,date}
-
-      const newNotes = note.map(item => {
-        if(item.id == idx){
-          item = newNote
-        } 
-        return item
-      })
-      setNote(newNotes)
+    e.preventDefault();
+    if (title && details) {
+      const newNote = { ...notes, title, details, date };
+      const newNotes = note.map((item) => {
+        if (item.id == idx) {
+          item = newNote;
+        }
+        return item;
+      });
+      setNote(newNotes);
     }
-    router.push("/")
-  }
+    router.push("/");
+  };
   return (
     <div className=" bg-black text-white h-full p-4 md:m-auto md:w-1/2  ">
       <header className="w-full flex items-center justify-between ">
@@ -77,6 +75,5 @@ const EditNote = () => {
 };
 export default EditNote;
 
-
-  // const storageNote = JSON.parse(localStorage.getItem("notes"));
-  // const index = storageNote.find((note) => note.id === idx);
+// const storageNote = JSON.parse(localStorage.getItem("notes"));
+// const index = storageNote.find((note) => note.id === idx);

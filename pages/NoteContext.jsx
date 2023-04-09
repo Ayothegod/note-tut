@@ -9,50 +9,47 @@ export const NoteContextProvider = ({ children }) => {
   const router = useRouter();
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
-  const [note, setNote] = useState([])
+  const [note, setNote] = useState([]);
   const date = useCreateDate();
-  const idx = router.query.id
-
-    useEffect(() => {
-    const noteFromLocalStorage = localStorage.getItem('notes')
-
-    const parsedNote = noteFromLocalStorage !== null ? JSON.parse(noteFromLocalStorage)
-      : []
-
-    setNote(parsedNote)
-  }, [])
+  const idx = router.query.id;
 
   useEffect(() => {
-  if (note.length === 0) return
-  localStorage.setItem('notes', JSON.stringify(note))
-}, [note])
+    const noteFromLocalStorage = localStorage.getItem("notes");
+    const parsedNote =
+      noteFromLocalStorage !== null ? JSON.parse(noteFromLocalStorage) : [];
+    setNote(parsedNote);
+  }, []);
 
-//create note
+  useEffect(() => {
+    if (note.length === 0) return;
+    localStorage.setItem("notes", JSON.stringify(note));
+  }, [note]);
+
+  //create note
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title && details) {
       const note = { id: uuid(), date, title, details };
       console.log(note);
       setNote((prev) => [...prev, note]);
+      setTitle("");
+      setDetails("");
       console.log(note);
       router.push("/");
     }
   };
 
-//delete note
-   const deleteNote = () => {
-    // const storageNote = JSON.parse(localStorage.getItem("notes"))
-    // const index= storageNote.findIndex(note => note.id === idx)
-    // console.log(index);
-    // storageNote.splice(index,1)
-    // localStorage.setItem("notes",JSON.stringify(storageNote))
-    const newNotes = note.filter(note => note.id !== idx)
-    setNote(newNotes)
-    router.push("/")
-  }
+  //delete note
+  const deleteNote = () => {
+    const storageNote = JSON.parse(localStorage.getItem("notes"));
+    const index = storageNote.filter((note) => note.id == idx);
+    console.log(index);
+    storageNote.splice(index, 1);
+    localStorage.setItem("notes", JSON.stringify(storageNote));
+    router.push("/");
+  };
 
   const value = {
-    // saveEdit,
     title,
     setTitle,
     details,
@@ -60,7 +57,7 @@ export const NoteContextProvider = ({ children }) => {
     note,
     setNote,
     handleSubmit,
-    deleteNote
+    deleteNote,
   };
   return <noteContext.Provider value={value}>{children}</noteContext.Provider>;
 };
