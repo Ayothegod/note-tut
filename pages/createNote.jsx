@@ -16,26 +16,6 @@ const CreateNote = () => {
     setNote,
     handleSubmit,
   } = useNoteContext();
-  // const router = useRouter()
-  // const [title,setTitle] = useState("")
-  // const [details,setDetails] = useState("")
-  // const [notes,setNotes] = useState(JSON.parse(localStorage.getItem("notes")) || [])
-
-  // const date = useCreateDate()
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   if(title && details){
-  //     const date = new Date()
-  //     const note = {id:uuid(),title,details,date}
-  //     console.log(note);
-  //     setNotes((prev) => [...prev,note])
-  //     router.push('/')
-  //   }
-  // }
-  // useEffect(() => {
-  //     localStorage.setItem("notes",JSON.stringify(notes))
-  // }, [notes])
-
   return (
     <div className=" bg-black text-white h-full p-4 md:m-auto md:w-1/2  ">
       <header className="w-full flex items-center justify-between ">

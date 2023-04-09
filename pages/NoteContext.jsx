@@ -9,24 +9,25 @@ export const NoteContextProvider = ({ children }) => {
   const router = useRouter();
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
-
   const [note, setNote] = useState([])
+  const date = useCreateDate();
+  const idx = router.query.id
+
     useEffect(() => {
     const noteFromLocalStorage = localStorage.getItem('notes')
 
-    const parsedNote =
-      noteFromLocalStorage !== null
-      ? JSON.parse(noteFromLocalStorage)
+    const parsedNote = noteFromLocalStorage !== null ? JSON.parse(noteFromLocalStorage)
       : []
 
     setNote(parsedNote)
   }, [])
+
   useEffect(() => {
   if (note.length === 0) return
   localStorage.setItem('notes', JSON.stringify(note))
 }, [note])
 
-  const date = useCreateDate();
+//create note
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title && details) {
@@ -37,28 +38,21 @@ export const NoteContextProvider = ({ children }) => {
       router.push("/");
     }
   };
-  const idx = router.query.id
 
-//   const index = getLocalStorage
-//                 .findIndex(user => return user == id_of_the_user_to_remove);
-// remove that element from the array
-
-// getLocalStorage.splice(index, 1);
-
-// Save the getLocalStorage back to local storage
-
-// localStorage.setItem('users', JSON.stringify(getLocalStorage));
-
+//delete note
    const deleteNote = () => {
-    const storageNote = JSON.parse(localStorage.getItem("notes"))
-    const selectedNote = note.filter(note => note.id == idx)
-    // const selectedNote = note.filter(note => note.id == idx)
-    console.log(selectedNote);
-    console.log({"note":storageNote});
-    note.splice(selectedNote,1)
+    // const storageNote = JSON.parse(localStorage.getItem("notes"))
+    // const index= storageNote.findIndex(note => note.id === idx)
+    // console.log(index);
+    // storageNote.splice(index,1)
+    // localStorage.setItem("notes",JSON.stringify(storageNote))
+    const newNotes = note.filter(note => note.id !== idx)
+    setNote(newNotes)
+    router.push("/")
   }
 
   const value = {
+    // saveEdit,
     title,
     setTitle,
     details,
