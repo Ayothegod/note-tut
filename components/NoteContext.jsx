@@ -24,9 +24,7 @@ export const NoteContextProvider = ({children}) => {
     }
     console.log(handleSubmit);
 }
-// useEffect(() => {
-//       // localStorage.setItem("notes",JSON.stringify(notes))
-//   }, [notes])
+
     return(
         <noteContext.Provider value={{title,setTitle,details,setDetails,notes,setNotes,handleSubmit}}>
             {children}
