@@ -37,7 +37,7 @@ export default function Home() {
           </button>
         </Link>
       </div>
-      <footer className="border-t border-t-neutral-800 py-4 px-2">
+      <footer className="border-t border-t-neutral-800 py-4 px-2 fixed bottom-0 z-50 bg-black w-screen">
             <p className="text-[#555]">@ Ayomide 2023</p>
       </footer>
       </main>
