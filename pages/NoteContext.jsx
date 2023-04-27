@@ -12,6 +12,7 @@ export const NoteContextProvider = ({ children }) => {
   const [note, setNote] = useState([]);
   const date = useCreateDate();
   const idx = router.query.id;
+  const [noEmailPassword,setNoEmailPassword] = useState("")
 
   useEffect(() => {
     const noteFromLocalStorage = localStorage.getItem("notes");
@@ -36,6 +37,9 @@ export const NoteContextProvider = ({ children }) => {
       setDetails("");
       console.log(note);
       router.push("/");
+    } else {
+      console.log("No note title or detaills!!!")
+      setNoEmailPassword("No note title or detaills!!!")
     }
   };
 
@@ -58,6 +62,7 @@ export const NoteContextProvider = ({ children }) => {
     setNote,
     handleSubmit,
     deleteNote,
+    noEmailPassword,
   };
   return <noteContext.Provider value={value}>{children}</noteContext.Provider>;
 };

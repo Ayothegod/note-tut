@@ -15,6 +15,7 @@ const CreateNote = () => {
     note,
     setNote,
     handleSubmit,
+    noEmailPassword
   } = useNoteContext();
   return (
     <div className=" bg-black text-white h-full p-4 md:m-auto md:w-1/2  ">
@@ -31,6 +32,9 @@ const CreateNote = () => {
           Save
         </button>
       </header>
+      {
+        !title || !details && <p className="text-red-600 font-bold ">{noEmailPassword}</p>
+      }
       <form className="flex flex-col gap-4 mt-8">
         <input
           value={title}
