@@ -21,8 +21,6 @@ export default function Home() {
         <header className=" w-full flex items-center justify-between ">
           <p className="font-semibold text-2xl ">My Notes</p>
 
-          {/* <input type="text" autoFocus placeholder='search notes' className=' text-gray-500 font-medium p-2 text-sm rounded-md outline-gray-300 '/> */}
-
           <button className=" bg-gray-700 text-lg p-2 rounded-lg ">
             <FaSearch />
           </button>
