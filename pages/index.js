@@ -16,7 +16,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className=" bg-black text-white h-full p-4 md:m-auto md:w-1/2 ">
+      <main className="w-full bg-black ">
+      <div className=" bg-black text-white min-h-screen p-4 md:m-auto md:w-2/3 relative">
         <header className=" w-full flex items-center justify-between ">
           <p className="font-semibold text-2xl ">My Notes</p>
 
@@ -33,10 +34,11 @@ export default function Home() {
         </section>
 
         <Link href="/createNote">
-          <button className="bg-gray-700 p-2 rounded-md text-xl fixed bottom-6 right-6 ">
+          <button className="bg-gray-700 p-2 rounded-md text-xl  bottom-6 right-6 fixed ">
             <FaPlus />
           </button>
         </Link>
+      </div>
       </main>
     </>
   );
