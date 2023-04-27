@@ -8,6 +8,7 @@ import { useNoteContext } from "@/pages/NoteContext";
 
 export default function Home() {
   const { note } = useNoteContext();
+  // omo
   return (
     <>
       <Head>
