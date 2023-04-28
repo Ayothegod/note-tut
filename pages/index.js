@@ -33,7 +33,7 @@ export default function Home() {
         </section>
 
         <Link href="/createNote">
-          <button className="bg-gray-700 p-2 rounded-md text-xl  bottom-6 right-6 fixed ">
+          <button className="bg-gray-700 p-2 rounded-md text-xl fixed bottom-20 right-6  ">
             <FaPlus />
           </button>
         </Link>
