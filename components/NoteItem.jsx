@@ -8,7 +8,6 @@ const NoteItem = ({ item }) => {
   const date = item.date;
   const details = item.details;
   const id = item.id;
-  // console.log(title, date, details, id);
 
 
   return (

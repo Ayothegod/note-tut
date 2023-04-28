@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import NoteItem from "@/components/NoteItem";
 import { FaSearch, FaPlus } from "react-icons/fa";
-import { useNoteContext } from "@/pages/NoteContext";
+import { useNoteContext } from "@/components/NoteContext";
 
 export default function Home() {
   const { note } = useNoteContext();
@@ -18,29 +18,29 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="w-full bg-black ">
-      <div className=" bg-black text-white min-h-screen p-4 md:m-auto md:w-2/3 relative">
-        <header className=" w-full flex items-center justify-between ">
-          <p className="font-semibold text-2xl ">My Notes</p>
+        <div className=" bg-black text-white min-h-screen p-4 md:m-auto md:w-2/3 relative">
+          <header className=" w-full flex items-center justify-between ">
+            <p className="font-semibold text-2xl ">My Notes</p>
 
-          <button className=" bg-gray-700 text-lg p-2 rounded-lg ">
-            <FaSearch />
-          </button>
-        </header>
-        <section className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-          {note.map((note) => (
-            <NoteItem key={note.id} item={note} />
-          ))}
-        </section>
+            <button className=" bg-gray-700 text-lg p-2 rounded-lg ">
+              <FaSearch />
+            </button>
+          </header>
+          <section className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+            {note.map((note) => (
+              <NoteItem key={note.id} item={note} />
+            ))}
+          </section>
 
-        <Link href="/createNote">
-          <button className="bg-gray-700 p-2 rounded-md text-xl fixed bottom-20 right-6  ">
-            <FaPlus />
-          </button>
-        </Link>
-      </div>
-      <footer className="border-t border-t-neutral-800 py-4 px-2 fixed bottom-0 z-50 bg-black w-screen">
-            <p className="text-[#555]">@ Ayomide 2023</p>
-      </footer>
+          <Link href="/createNote">
+            <button className="bg-gray-700 p-2 rounded-md text-xl fixed bottom-20 right-6  ">
+              <FaPlus />
+            </button>
+          </Link>
+        </div>
+        <footer className="border-t border-t-neutral-800 py-4 px-2 fixed bottom-0 z-50 bg-black w-screen">
+          <p className="text-[#555]">@ Ayomide 2023</p>
+        </footer>
       </main>
     </>
   );
