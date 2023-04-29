@@ -26,7 +26,8 @@ const CreateNote = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className=" bg-black text-white h-full p-4 md:m-auto md:w-1/2  ">
+
+      <div className=" bg-black text-white h-full  p-4 md:w-full md:text-red-600 ">
         <header className="w-full flex items-center justify-between ">
           <Link href="/">
             <button className="text-xl bg-gray-700 p-2 rounded-md">
@@ -34,7 +35,7 @@ const CreateNote = () => {
             </button>
           </Link>
           <button
-            className="bg-purple-700 py-2 px-4 rounded-md text-sm font-medium "
+            className="md:text-red-600  py-2 px-4 rounded-md text-sm font-medium "
             onClick={handleSubmit}
           >
             Save
