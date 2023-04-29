@@ -27,7 +27,7 @@ const CreateNote = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className=" bg-black">
+      <main className="bg-black min-h-screen ">
         <div className=" md:w-2/3 mx-auto text-white h-full  p-4  ">
           <header className="w-full flex items-center justify-between ">
             <Link href="/">
