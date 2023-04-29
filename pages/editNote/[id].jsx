@@ -44,7 +44,7 @@ const EditNote = () => {
 
 
       <div className=" md:w-2/3 text-white h-full p-4 md:m-auto  ">
-        <header className="w-full flex items-center justify-between ">
+        <header className="w-full flex items-center justify-between pb-4 border-b border-b-neutral-800">
           <Link href="/">
             <button className="text-xl bg-gray-700 p-2 rounded-md">
               <IoIosArrowBack />
