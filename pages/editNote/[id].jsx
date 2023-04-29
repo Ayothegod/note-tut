@@ -11,7 +11,6 @@ const EditNote = () => {
   const router = useRouter();
   const idx = router.query.id;
   const { note, setNote, deleteNote } = useNoteContext();
-  //create note
   const date = useCreateDate();
   const notes = note.find((note) => note.id === idx);
   const [title, setTitle] = useState(notes?.title || "Your Title Here");
@@ -40,7 +39,11 @@ const EditNote = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className=" bg-black text-white h-full p-4 md:m-auto md:w-1/2  ">
+
+      <main className="bg-black">
+
+
+      <div className=" md:w-2/3 text-white h-full p-4 md:m-auto  ">
         <header className="w-full flex items-center justify-between ">
           <Link href="/">
             <button className="text-xl bg-gray-700 p-2 rounded-md">
@@ -79,6 +82,7 @@ const EditNote = () => {
           ></textarea>
         </form>
       </div>
+            </main>
     </>
   );
 };
