@@ -8,7 +8,7 @@ import { useNoteContext } from "@/components/NoteContext";
 
 export default function Home() {
   const { note } = useNoteContext();
-  // omo
+
   return (
     <>
       <Head>
@@ -17,16 +17,19 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <main className="w-full bg-black ">
-        <div className=" bg-black text-white min-h-screen p-4 md:m-auto md:w-2/3 relative">
-          <header className=" w-full flex items-center justify-between ">
+
+        <div className=" bg-black text-white min-h-screen p-4 md:m-auto md:w-2/3 relative ">
+          <header className=" w-full flex items-center justify-between border-b border-b-neutral-800 pb-4">
             <p className="font-semibold text-2xl ">My Notes</p>
 
             <button className=" bg-gray-700 text-lg p-2 rounded-lg ">
               <FaSearch />
             </button>
           </header>
-          <section className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+          <section className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
             {note.map((note) => (
               <NoteItem key={note.id} item={note} />
             ))}
@@ -38,6 +41,7 @@ export default function Home() {
             </button>
           </Link>
         </div>
+
         <footer className="border-t border-t-neutral-800 py-4 px-2 fixed bottom-0 z-50 bg-black w-screen">
           <p className="text-[#555]">@ Ayomide 2023</p>
         </footer>
