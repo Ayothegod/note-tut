@@ -27,42 +27,44 @@ const CreateNote = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className=" bg-black text-white h-full  p-4 md:w-full md:text-red-600 ">
-        <header className="w-full flex items-center justify-between ">
-          <Link href="/">
-            <button className="text-xl bg-gray-700 p-2 rounded-md">
-              <IoIosArrowBack />
+      <main className=" bg-black">
+        <div className=" md:w-2/3 mx-auto text-white h-full  p-4  ">
+          <header className="w-full flex items-center justify-between ">
+            <Link href="/">
+              <button className="text-xl bg-gray-700 p-2 rounded-md">
+                <IoIosArrowBack />
+              </button>
+            </Link>
+            <button
+              className="md:text-red-600  py-2 px-4 rounded-md text-sm font-medium "
+              onClick={handleSubmit}
+            >
+              Save
             </button>
-          </Link>
-          <button
-            className="md:text-red-600  py-2 px-4 rounded-md text-sm font-medium "
-            onClick={handleSubmit}
-          >
-            Save
-          </button>
-        </header>
-        {!title ||
-          (!details && (
-            <p className="text-red-600 font-bold ">{noEmailPassword}</p>
-          ))}
-        <form className="flex flex-col gap-4 mt-8">
-          <input
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            type="text"
-            placeholder="Title"
-            autoFocus
-            className="bg-transparent border-none outline-none text-3xl text-gray-200"
-          />
-          <textarea
-            value={details}
-            onChange={(e) => setDetails(e.target.value)}
-            rows="28"
-            placeholder="Note Details..."
-            className="bg-transparent border-none outline-none text-sm text-gray-200"
-          ></textarea>
-        </form>
-      </div>
+          </header>
+          {!title ||
+            (!details && (
+              <p className="text-red-600 font-bold ">{noEmailPassword}</p>
+            ))}
+          <form className="flex flex-col gap-4 mt-8">
+            <input
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              type="text"
+              placeholder="Title"
+              autoFocus
+              className="bg-transparent border-none outline-none text-3xl text-gray-200"
+            />
+            <textarea
+              value={details}
+              onChange={(e) => setDetails(e.target.value)}
+              rows="28"
+              placeholder="Note Details..."
+              className="bg-transparent border-none outline-none text-sm text-gray-200"
+            ></textarea>
+          </form>
+        </div>
+      </main>
     </>
   );
 };
