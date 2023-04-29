@@ -5,9 +5,11 @@ import { useState, useEffect } from "react";
 import NoteItem from "@/components/NoteItem";
 import { FaSearch, FaPlus } from "react-icons/fa";
 import { useNoteContext } from "@/components/NoteContext";
+import iconempty from "@/components/assets/icons8-empty-box-96.png"
+import Image from "next/image";
 
 export default function Home() {
-  const { note } = useNoteContext();
+  const { note } = useNoteContext();  
 
   return (
     <>
@@ -34,6 +36,14 @@ export default function Home() {
               <NoteItem key={note.id} item={note} />
             ))}
           </section>
+
+          {
+            note.length < 1 && 
+            <div className="grid place-items-center">
+              <Image src={iconempty} alt="iconempty" className="animate-bounce"/>
+              <p className="mt-8 text-lg text-neutral-500">Notes is empty</p>
+            </div>
+          }
 
           <Link href="/createNote">
             <button className="bg-gray-700 p-2 rounded-md text-xl fixed bottom-20 right-6  ">
