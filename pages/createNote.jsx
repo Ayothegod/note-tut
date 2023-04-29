@@ -31,12 +31,12 @@ const CreateNote = () => {
         <div className=" md:w-2/3 mx-auto text-white h-full  p-4  ">
           <header className="w-full flex items-center justify-between ">
             <Link href="/">
-              <button className="text-xl bg-gray-700 p-2 rounded-md">
+              <button className="text-xl bg-purple-700 p-2 rounded-md">
                 <IoIosArrowBack />
               </button>
             </Link>
             <button
-              className="md:text-red-600  py-2 px-4 rounded-md text-sm font-medium "
+              className="bg-purple-700  py-2 px-4 rounded-md text-sm font-medium "
               onClick={handleSubmit}
             >
               Save
